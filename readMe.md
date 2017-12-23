@@ -29,7 +29,7 @@ e = Epsilon
 ```
 `e` stands for Epsilon
 
-Some Examples
+The input should be given in prefix from as shown.
 1. `(a|b)* -> Star (Or a b)`
 
 2. `(ab| e ) c -> Then (Or (Then a b) e) c`
