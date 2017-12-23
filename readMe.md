@@ -39,3 +39,55 @@ algorithm demands so. The `augMentedReg` takes in your
 regex and augments a `#` at the end.
 
 Rewrite `reg` for the regular expression you want in the source code.
+
+**Sample illustration**
+
+Regular Expression - `(Then (Then (Star a) (Star b)) c)` which is `(a*b*c)`
+(Written in source code)
+```
+Regex-To-DFA>ghci
+GHCi, version 8.0.1: http://www.haskell.org/ghc/  :? for help
+Prelude> :l regToDfa.hs
+[1 of 1] Compiling Main             ( regToDfa.hs, interpreted )
+
+regToDfa.hs:376:12: warning: [-Wtabs]
+    Tab character found here, and in 19 further locations.
+    Please use spaces instead.
+Ok, modules loaded: Main.
+*Main> main
+Initial State:
+[1,3,6]
+
+States :
+[1,3,6]
+[8]
+[3,6]
+[]
+
+
+Moves:
+[] on c = []
+[] on b = []
+[] on a = []
+[] on # = []
+[3,6] on c = [8]
+[3,6] on b = [3,6]
+[3,6] on a = []
+[3,6] on # = []
+[8] on c = []
+[8] on b = []
+[8] on a = []
+[8] on # = []
+[1,3,6] on c = [8]
+[1,3,6] on b = [3,6]
+[1,3,6] on a = [1,3,6]
+[1,3,6] on # = []
+
+
+Final States:
+[8]
+
+```
+**Image generated**
+
+![astar-bstar-c](https://user-images.githubusercontent.com/24961068/34318880-0654f478-e7f8-11e7-911a-710b2e22cdef.png)
