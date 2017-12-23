@@ -1,0 +1,26 @@
+digraph myFile {
+ rankdir = LR ;
+ "[1,5,7]" [shape=circle , label="[1,5,7]" ,color=black];
+ "[7]" [shape=circle , label="[7]" ,color=black];
+ "[2]" [shape=circle , label="[2]" ,color=black];
+ "[1,7]" [shape=circle , label="[1,7]" ,color=black];
+ 
+ "[1,5,7]" [shape=circle , label= "[1,5,7]", color=green];
+ 
+ 
+ "[1,5,7]" [shape=doublecircle , color=red];
+ "[7]" [shape=doublecircle , color=red];
+ "[1,7]" [shape=doublecircle , color=red];
+ 
+ "[1,5,7]" -> "[2]" [label = "'a'"];
+ "[1,5,7]" -> "[7]" [label = "'c'"];
+ 
+ 
+ "[2]" -> "[1,7]" [label = "'b'"];
+ 
+ 
+ "[1,7]" -> "[2]" [label = "'a'"];
+ node [shape=none, lavel=initialState, style = invis];
+"_newState_1" -> "[1,5,7]" [color = green];
+ 
+}
