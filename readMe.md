@@ -1,10 +1,10 @@
-##Realizing Deterministic Finite State Automata from Regular Expressions
+## Realizing Deterministic Finite State Automata from Regular Expressions
 
 The code is the direct implementation of algorithm for converting regular expressions directly into DFA taken from the book **Compilers: Principles, Techniques and Tools by Aho, Ullman, Sethi and Lam**.
 
-- Using the tool
+**Using the tool**
 
-Make sure Halex package is installed on your computer. Or else use the
+Make sure Halex package is installed on your computer or else use the
 following command.
 
 ```
@@ -14,27 +14,28 @@ Graphviz software needs to be installed to generate png image of the automaton d
 
 Installation instructions for Graphviz can be found here - https://graphviz.gitlab.io/download/
 
-After having succesfully installed, type in the Regular expression in the source code as follows -
+After having succesfully installed, type in the Regular expression in the source code as follows.
 
-**Steps to Input the regular expression:**
+**Steps to Input the regular expression**
 
 First define literals as follows so that it becomes easy to
 write larger regex.
 
+```
 a = Literal 'a'
 b = Literal 'b'
 k = Literal 'k'
 e = Epsilon
-
-e stands for Epsilon
+```
+`e` stands for Epsilon
 
 Some Examples
-1. (a|b)* -> Star (Or a b)
+1. `(a|b)* -> Star (Or a b)`
 
-2. (ab| e ) c -> Then (Or (Then a b) e) c
+2. `(ab| e ) c -> Then (Or (Then a b) e) c`
 
 An augmented regular expression is needed as the
 algorithm demands so. The `augMentedReg` takes in your
-regex and augments a '#' at the end.
+regex and augments a `#` at the end.
 
 Rewrite `reg` for the regular expression you want in the source code.
